@@ -1,5 +1,7 @@
 package me.lxxjn0.car.domain;
 
+import java.util.Objects;
+
 public class Name {
 
 	private static final int NAME_LENGTH_LOWER_BOUND = 1;
@@ -13,9 +15,7 @@ public class Name {
 	}
 
 	private void validate(final String name) {
-		if (null == name) {
-			throw new NullPointerException("자동차 이름이 null입니다.");
-		}
+		Objects.requireNonNull(name, "자동차 이름이 null입니다.");
 
 		if (name.length() < NAME_LENGTH_LOWER_BOUND || name.length() > NAME_LENGTH_UPPER_BOUND) {
 			throw new IllegalArgumentException("자동차 이름이 유효하지 않습니다.");
