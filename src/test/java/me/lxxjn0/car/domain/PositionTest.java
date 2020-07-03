@@ -29,4 +29,14 @@ class PositionTest {
 			.hasMessage("위치 값이 유효하지 않습니다.");
 	}
 
+	@DisplayName("move() - 입력받은 값만큼 위치 이동")
+	@Test
+	void move_NumberOfMovingUnit_MovePosition() {
+		final Position position = new Position(0);
+		position.move(2);
+
+		assertThat(position).extracting("position")
+		                    .isEqualTo(2);
+	}
+
 }

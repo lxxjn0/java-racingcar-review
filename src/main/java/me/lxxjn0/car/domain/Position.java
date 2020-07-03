@@ -21,4 +21,8 @@ public class Position {
 		}
 	}
 
+	public void move(final int unit) {
+		this.position += unit;
+	}
+
 }
