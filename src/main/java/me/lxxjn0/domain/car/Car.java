@@ -2,6 +2,8 @@ package me.lxxjn0.domain.car;
 
 import java.util.Objects;
 
+import me.lxxjn0.domain.report.Report;
+
 public class Car {
 
     private static final int MOVING_INCREMENT_UNIT = 1;
@@ -25,5 +27,9 @@ public class Car {
         if (number >= MOVING_LOWER_BOUND) {
             this.position.move(MOVING_INCREMENT_UNIT);
         }
+    }
+
+    public Report generateReport() {
+        return Report.of(name, position);
     }
 }

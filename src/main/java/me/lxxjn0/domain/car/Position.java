@@ -24,4 +24,8 @@ public class Position {
     public void move(final int unit) {
         this.position += unit;
     }
+
+    public int getPosition() {
+        return position;
+    }
 }

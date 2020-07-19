@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import me.lxxjn0.domain.report.Report;
+
 class CarTest {
 
     @DisplayName("Car() - 자동차의 이름을 입력받아 객체 생성")
@@ -50,5 +52,17 @@ class CarTest {
         assertThat(car).extracting("position")
                 .extracting("position")
                 .isEqualTo(2);
+    }
+
+    @DisplayName("generateReport() - 자동차의 위치와 이름으로 Report 객체를 생성하여 반환")
+    @Test
+    void generateReport() {
+        // given
+        Name name = new Name("test");
+        Position position = new Position();
+        Car car = new Car(name, position);
+
+        // then
+        assertThat(car.generateReport()).isInstanceOf(Report.class);
     }
 }
