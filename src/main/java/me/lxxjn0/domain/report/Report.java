@@ -1,5 +1,7 @@
 package me.lxxjn0.domain.report;
 
+import java.util.Objects;
+
 import me.lxxjn0.domain.car.Name;
 import me.lxxjn0.domain.car.Position;
 
@@ -15,6 +17,9 @@ public class Report {
     }
 
     public static Report of(final Name name, final Position position) {
+        Objects.requireNonNull(name, "이름이 null입니다.");
+        Objects.requireNonNull(position, "위치가 null입니다.");
+
         StringBuilder stringBuilder = new StringBuilder();
 
         stringBuilder.append(name.getName());

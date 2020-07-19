@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullSource;
 
 import me.lxxjn0.domain.car.Cars;
 
@@ -17,5 +19,15 @@ class CarsFactoryTest {
 
         // then
         assertThat(CarsFactory.create(inputCarNames)).isInstanceOf(Cars.class);
+    }
+
+    @DisplayName("create() - 자동차 이름이 null일 경우 예외 발생")
+    @ParameterizedTest
+    @NullSource
+    void create_Exception(final String inputCarNames) {
+        // then
+        assertThatThrownBy(() -> CarsFactory.create(inputCarNames))
+                .isInstanceOf(NullPointerException.class)
+                .hasMessage("자동차 이름이 null입니다.");
     }
 }
