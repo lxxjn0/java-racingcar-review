@@ -1,9 +1,12 @@
 package me.lxxjn0.domain.car;
 
+import static java.util.stream.Collectors.*;
+
 import java.util.List;
 import java.util.Objects;
 
 import me.lxxjn0.domain.numbergenerator.NumberGenerator;
+import me.lxxjn0.domain.report.Report;
 
 public class Cars {
     private final List<Car> cars;
@@ -25,5 +28,11 @@ public class Cars {
         for (Car car : cars) {
             car.move(numberGenerator.generate());
         }
+    }
+
+    public List<Report> generateReports() {
+        return cars.stream()
+                .map(Car::generateReport)
+                .collect(toList());
     }
 }

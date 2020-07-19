@@ -12,6 +12,7 @@ import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.NullSource;
 
 import me.lxxjn0.domain.numbergenerator.OptionalNumberGenerator;
+import me.lxxjn0.domain.report.Report;
 
 class CarsTest {
 
@@ -68,5 +69,20 @@ class CarsTest {
                 .extracting("position")
                 .extracting("position")
                 .isEqualTo(Arrays.asList(1, 1, 1));
+    }
+
+    @DisplayName("generateReports() - 자동차들의 Report를 생성하여 반환")
+    @Test
+    void generateReports() {
+        // given
+        List<Car> generatedCars = Arrays.asList(
+                new Car(new Name("test1")),
+                new Car(new Name("test2")),
+                new Car(new Name("test3")));
+        Cars cars = new Cars(generatedCars);
+
+        // then
+        assertThat(cars.generateReports()).asList()
+                .hasOnlyElementsOfType(Report.class);
     }
 }
