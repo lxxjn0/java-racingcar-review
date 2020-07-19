@@ -12,7 +12,7 @@ public class Position {
     }
 
     public Position() {
-        this.position = POSITION_INIT_VALUE;
+        this(POSITION_INIT_VALUE);
     }
 
     private void validate(final int position) {
