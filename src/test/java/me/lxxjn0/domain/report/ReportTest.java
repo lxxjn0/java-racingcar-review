@@ -47,4 +47,18 @@ class ReportTest {
                 .isInstanceOf(NullPointerException.class)
                 .hasMessage("위치가 null입니다.");
     }
+
+    @DisplayName("getReport() - 이름과 위치를 출력 형식에 맞게 반환")
+    @Test
+    void getReport() {
+        // given
+        Name name = new Name("test");
+        Position position = new Position(6);
+
+        // when
+        Report report = Report.of(name, position);
+
+        // then
+        assertThat(report.getReport()).isEqualTo("test : ------");
+    }
 }

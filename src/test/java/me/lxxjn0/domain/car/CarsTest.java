@@ -85,4 +85,19 @@ class CarsTest {
         assertThat(cars.generateReports()).asList()
                 .hasOnlyElementsOfType(Report.class);
     }
+
+    @DisplayName("findWinners() - 승자의 이름들을 반환")
+    @Test
+    void findWinners() {
+        // given
+        List<Car> generatedCars = Arrays.asList(
+                new Car(new Name("test1"), new Position(1)),
+                new Car(new Name("test2"), new Position(4)),
+                new Car(new Name("test3"), new Position(4)));
+        Cars cars = new Cars(generatedCars);
+
+        // then
+        assertThat(cars.findWinners()).asList()
+                .isEqualTo(Arrays.asList("test2", "test3"));
+    }
 }

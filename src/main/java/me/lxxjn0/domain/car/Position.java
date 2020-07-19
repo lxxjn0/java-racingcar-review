@@ -1,6 +1,8 @@
 package me.lxxjn0.domain.car;
 
-public class Position {
+import java.util.Objects;
+
+public class Position implements Comparable<Position> {
 
     private static final int POSITION_INIT_VALUE = 0;
 
@@ -27,5 +29,27 @@ public class Position {
 
     public int getPosition() {
         return position;
+    }
+
+    @Override
+    public int compareTo(Position that) {
+        return this.position - that.position;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (that == null || getClass() != that.getClass()) {
+            return false;
+        }
+        Position position = (Position)that;
+        return this.getPosition() == position.getPosition();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPosition());
     }
 }

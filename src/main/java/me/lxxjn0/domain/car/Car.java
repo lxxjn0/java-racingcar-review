@@ -32,4 +32,12 @@ public class Car {
     public Report generateReport() {
         return Report.of(name, position);
     }
+
+    public Name getName() {
+        return name;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
 }
