@@ -1,9 +1,9 @@
-package me.lxxjn0.car.domain;
+package me.lxxjn0.domain.car;
 
 import java.util.List;
 import java.util.Objects;
 
-import me.lxxjn0.numbergenerator.domain.NumberGenerator;
+import me.lxxjn0.domain.numbergenerator.NumberGenerator;
 
 public class Cars {
     private final List<Car> cars;

@@ -1,4 +1,4 @@
-package me.lxxjn0.car.domain;
+package me.lxxjn0.domain.car;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -11,7 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.NullSource;
 
-import me.lxxjn0.numbergenerator.domain.OptionalNumberGenerator;
+import me.lxxjn0.domain.numbergenerator.OptionalNumberGenerator;
 
 class CarsTest {
 

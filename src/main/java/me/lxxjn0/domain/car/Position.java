@@ -1,4 +1,4 @@
-package me.lxxjn0.car.domain;
+package me.lxxjn0.domain.car;
 
 public class Position {
 
