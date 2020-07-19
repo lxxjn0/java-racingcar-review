@@ -6,7 +6,7 @@ public class AttemptNumber {
 
     private static final int ATTEMPT_NUMBER_LOWER_BOUND = 1;
 
-    private final int attemptNumber;
+    private int attemptNumber;
 
     private AttemptNumber(final int attemptNumber) {
         validate(attemptNumber);
@@ -24,5 +24,13 @@ public class AttemptNumber {
         if (attemptNumber < ATTEMPT_NUMBER_LOWER_BOUND) {
             throw new IllegalArgumentException("시도 횟수가 " + ATTEMPT_NUMBER_LOWER_BOUND + "보다 작습니다.");
         }
+    }
+
+    public boolean canAttempt() {
+        return attemptNumber >= ATTEMPT_NUMBER_LOWER_BOUND;
+    }
+
+    public void attempt() {
+        attemptNumber--;
     }
 }

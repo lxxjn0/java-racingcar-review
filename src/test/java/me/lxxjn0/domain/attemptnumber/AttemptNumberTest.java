@@ -40,4 +40,28 @@ class AttemptNumberTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("시도 횟수가 1보다 작습니다.");
     }
+
+    @DisplayName("canAttempt() - 시도할 수 있는지 여부")
+    @Test
+    void canAttempt() {
+        // given
+        AttemptNumber attemptNumber = AttemptNumber.of("1");
+
+        // then
+        assertThat(attemptNumber.canAttempt()).isTrue();
+    }
+
+    @DisplayName("attempt() - 시도 횟수를 1개 감소")
+    @Test
+    void attempt() {
+        // given
+        AttemptNumber attemptNumber = AttemptNumber.of("2");
+
+        // when
+        attemptNumber.attempt();
+
+        // then
+        assertThat(attemptNumber).extracting("attemptNumber")
+                .isEqualTo(1);
+    }
 }
