@@ -24,6 +24,7 @@ public class GameController {
             attemptNumber.attempt();
             play(cars, numberGenerator);
         }
+        printWinners(cars.findWinnerNames());
     }
 
     public void play(final Cars cars, final NumberGenerator numberGenerator) {

@@ -37,7 +37,7 @@ public class Cars {
                 .collect(toList());
     }
 
-    public List<String> findWinners() {
+    public List<String> findWinnerNames() {
         Position winningPosition = findWinningPosition();
 
         return cars.stream()

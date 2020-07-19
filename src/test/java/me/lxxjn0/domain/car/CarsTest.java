@@ -97,7 +97,7 @@ class CarsTest {
         Cars cars = new Cars(generatedCars);
 
         // then
-        assertThat(cars.findWinners()).asList()
+        assertThat(cars.findWinnerNames()).asList()
                 .isEqualTo(Arrays.asList("test2", "test3"));
     }
 }
