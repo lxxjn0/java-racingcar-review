@@ -1,4 +1,4 @@
-package me.lxxjn0.car.domain;
+package me.lxxjn0.numbergenerator.domain;
 
 import java.util.Random;
 

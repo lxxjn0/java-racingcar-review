@@ -3,6 +3,8 @@ package me.lxxjn0.car.domain;
 import java.util.List;
 import java.util.Objects;
 
+import me.lxxjn0.numbergenerator.domain.NumberGenerator;
+
 public class Cars {
     private final List<Car> cars;
 
@@ -16,6 +18,12 @@ public class Cars {
 
         if (cars.isEmpty()) {
             throw new IllegalArgumentException("자동차가 존재하지 않습니다.");
+        }
+    }
+
+    public void move(final NumberGenerator numberGenerator) {
+        for (Car car : cars) {
+            car.move(numberGenerator.generate());
         }
     }
 }

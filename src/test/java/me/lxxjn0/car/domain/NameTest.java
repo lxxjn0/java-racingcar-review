@@ -33,5 +33,4 @@ class NameTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름이 유효하지 않습니다.");
     }
-
 }

@@ -26,5 +26,4 @@ public class Car {
             this.position.move(MOVING_INCREMENT_UNIT);
         }
     }
-
 }

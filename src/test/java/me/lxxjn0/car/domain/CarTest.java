@@ -51,5 +51,4 @@ class CarTest {
                 .extracting("position")
                 .isEqualTo(2);
     }
-
 }

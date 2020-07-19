@@ -21,5 +21,4 @@ public class Name {
             throw new IllegalArgumentException("자동차 이름이 유효하지 않습니다.");
         }
     }
-
 }

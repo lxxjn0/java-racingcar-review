@@ -38,5 +38,4 @@ class PositionTest {
         assertThat(position).extracting("position")
                 .isEqualTo(2);
     }
-
 }
